@@ -10,22 +10,9 @@ body {
     height: 100vh;
 }
 
-@media screen AND (max-width: 900px) {
-    h1,
-    h2 {
-        font-size: 3rem;
-        margin-bottom: 50px;
-    }
-    .menuButton {
-        font-size: 1.3rem;
-    }
-    .score {
-        font-size: 0.9rem;
-    }
-}
 
 /*
-* Texte
+* Titres
 */
 h1,
 h2,
@@ -35,6 +22,47 @@ h2,
     -webkit-text-stroke: 1px #ffcb05;
     margin-bottom: 50px;
 }
+
+
+/* 
+* CSS des joueurs
+*/
+.bg-color-user {
+    background-color: rgba(53, 101, 174, 0.8);
+}
+
+.bg-color-rival {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.neutral {
+    color: white;
+}
+
+.winPoint {
+    color :green;
+}
+
+.bi-circle-fill{
+    font-size: 2rem;
+}
+
+
+/*
+* Changement de la taille du texte en fonction de la taille de l'écran
+*/
+@media (max-width: 800px) { 
+    .score {
+        font-size: 1rem;
+    }
+    h1,h2 {
+        font-size: 2.2rem;
+    }
+    .bi-circle-fill{
+        font-size: 1.2rem;
+    }
+ }
+
 
 /*
 * Masquage des div
@@ -50,15 +78,18 @@ h2,
     display: none;
 }
 
+
 /* 
 * Changement de l'image statisque en image dynamique
 */
 .staticImage {
     position: relative;
 }
+
 .staticImage:hover .animatedImage {
     opacity: 1;
 }
+
 .animatedImage {
     opacity: 0;
     position: absolute;
@@ -66,30 +97,13 @@ h2,
     left: 0;
     transition: 0.5s ease-in-out;
 }
-#pokeball:hover {
+
+.pokeball:hover {
     cursor: pointer;
     transition: transform 1s ease;
     transform: rotate(360deg);
 }
 
-/* 
-* CSS des joueurs
-*/
-.bg-color-user {
-    background-color: rgba(53, 101, 174, 0.8);
-}
-.bg-color-rival {
-    background-color: rgba(255, 0, 0, 0.8);
-}
-.score {
-    font-size: 2rem;
-}
-.neutral {
-    color: white;
-}
-.winPoint {
-    color :green;
-}
 
 /* 
 * CSS de la modal Pikachu
@@ -97,15 +111,19 @@ h2,
 .charmander{
     color: red;
 }
+
 .squirtle{
     color: blue;
 }
+
 .bulbasaur{
     color: green;
 }
+
 .goodGame {
     font-weight: bold;
 }
+
 
 /* 
 * Boutons

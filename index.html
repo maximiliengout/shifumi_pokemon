@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="col-4 text-center d-sm-block d-none">
-                <img src="assets/img/pokeball.png" class="col-8" id="pokeball" alt="Image de la pokéball"
+                <img src="assets/img/pokeball.png" class="col-8 pokeball" alt="Image de la pokéball"
                     data-bs-toggle="modal" data-bs-target="#pikachu">
             </div>
             <div class="col-sm-4 col-6 text-sm-end text-center staticImage">
@@ -49,14 +49,18 @@
             </div>
         </div>
         <div class="row col-12 text-center mx-auto">
-            <div class="col-12 col-sm-4 text-sm-end mx-auto mt-sm-5 mt-2">
+            <div class="col-12 col-sm-4 text-sm-end mx-auto mt-sm-5 mt-1">
                 <button type="button" class="btn menuButton" data-bs-toggle="modal"
                     data-bs-target="#pokemonShifumiRules">
                     Règles
                 </button>
             </div>
-            <div class="col-12 col-sm-4 text-sm-start mx-auto mt-sm-5 mt-2">
+            <div class="col-12 col-sm-4 text-sm-start mx-auto mt-sm-5 mt-1">
                 <button class="btn menuButton" id="startBattle">Commencer</button>
+            </div>
+            <div class="col-4 text-center d-block d-sm-none mx-auto">
+                <img src="assets/img/pokeball.png" class="col-6 mt-2 pokeball" alt="Image de la pokéball"
+                    data-bs-toggle="modal" data-bs-target="#pikachu">
             </div>
         </div>
     </div>
@@ -69,7 +73,7 @@
                     <img src="assets/img/pikachu.gif" class="col-12" alt="Image de pikachu">
                 </div>
                 <p class="text-center">Sources</p>
-                <div class="row col-12 text-center">
+                <div class="row col-12 text-center mb-1">
                     <span class="col-3"><a href="https://giphy.com/">Giphy</a></span>
                     <span class="col-3"><a href="https://pixabay.com/">Pixabay</a></span>
                     <span class="col-3"><a href="https://www.pokepedia.fr/">Poképédia</a></span>
@@ -112,32 +116,30 @@
         <div class="row align-items-center">
             <div class="col-sm-4 col-6">
                 <div class="text-sm-start text-center row">
-                    <img src="assets/img/ash.png" class="col-5 bg-color-user border border-primary border-5"
+                    <img src="assets/img/ash.png" class="col-6 col-sm-5 bg-color-user border border-primary border-5"
                         alt="Image du joueur">
-                    <div class="col-7 my-auto">
-                        <p class="col-md-12 col-12 score text-center text-white">Combats gagnés</p>
-                        <p class="score fs-3 fs-md-1 text-center">
-                            <i class="bi bi-circle-fill neutral" id="winUser1"></i>
-                            <i class="bi bi-circle-fill neutral" id="winUser2"></i>
-                            <i class="bi bi-circle-fill neutral" id="winUser3"></i>
+                    <div class="col-6 col-sm-7 my-auto">
+                        <p class="col-12 score text-center text-white">Victoires</p>
+                        <p class="text-center">
+                            <i class="bi bi-circle-fill neutral mx-sm-2" id="winUser1"></i>
+                            <i class="bi bi-circle-fill neutral mx-sm-2" id="winUser2"></i>
+                            <i class="bi bi-circle-fill neutral mx-sm-2" id="winUser3"></i>
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-4 text-center d-sm-block d-none">
-                <p class="text-center vs">VS</p>
-            </div>
-            <div class="col-sm-4 col-6 text-sm-end text-center staticImage">
+
+            <div class="col-sm-4 col-6 offset-md-4  text-sm-end text-center staticImage">
                 <div class="text-sm-start text-center row">
-                    <div class="col-7 my-auto">
-                        <p class="col-md-12 col-12 score text-center text-white">Combats gagnés</p>
-                        <p class="score fs-3 fs-md-1 text-center">
-                            <i class="bi bi-circle-fill neutral" id="winRival1"></i>
-                            <i class="bi bi-circle-fill neutral" id="winRival2"></i>
-                            <i class="bi bi-circle-fill neutral" id="winRival3"></i>
+                    <div class="col-6 col-sm-7 my-auto">
+                        <p class="col-12 text-center text-white score">Victoires</p>
+                        <p class="text-center">
+                            <i class="bi bi-circle-fill neutral mx-sm-2" id="winRival1"></i>
+                            <i class="bi bi-circle-fill neutral mx-sm-2" id="winRival2"></i>
+                            <i class="bi bi-circle-fill neutral mx-sm-2" id="winRival3"></i>
                         </p>
                     </div>
-                    <img src="assets/img/gary.png" class="col-5 bg-color-rival border border-danger border-5"
+                    <img src="assets/img/gary.png" class="col-6 col-sm-5 bg-color-rival border border-danger border-5"
                         alt="Image du joueur">
                 </div>
             </div>
@@ -145,27 +147,27 @@
 
         <!-----------------------------------------Choix Pokémon-------------------------------------------------->
         <div id="pokemonChoice">
-            <div class="text-center mt-5 mx-auto">
+            <div class="text-center mt-sm-5 mt-3 mx-auto">
                 <h2 class="mb-3">Choisis ton Pokémon</h2>
             </div>
             <div class="col-12 row">
-                <div class="col-sm-3 col-5 mx-auto m-3">
-                    <div class="staticImage" id="bulbasaur">
+                <div class="col-sm-3 col-12 mx-auto m-2">
+                    <div class="staticImage col-6 col-sm-12 mx-auto" id="bulbasaur">
                         <img src="assets/img/bulbasaur.jpg" class="col-12 text-center"
                             alt="Image statique de Bulbizarre">
                         <img src="assets/img/bulbasaurHover.gif" class="col-12 animatedImage text-center"
                             alt="Image dynamique de Bulbizarre">
                     </div>
                 </div>
-                <div class="col-sm-3 col-5 mx-auto m-3">
-                    <div class="staticImage" id="charmander">
+                <div class="col-sm-3 col-12 mx-auto m-2">
+                    <div class="staticImage col-6 col-sm-12 mx-auto" id="charmander">
                         <img src="assets/img/charmander.jpg" class="col-12" alt="Image statique de Salamèche">
                         <img src="assets/img/charmanderHover.gif" class="col-12 animatedImage"
                             alt="Image dynamique de Bulbizarre">
                     </div>
                 </div>
-                <div class="col-sm-3 col-5 mx-auto m-3">
-                    <div class="staticImage" id="squirtle">
+                <div class="col-sm-3 col-12 mx-auto m-2">
+                    <div class="staticImage col-6 col-sm-12 mx-auto" id="squirtle">
                         <img src="assets/img/squirtle.jpg" class="col-12" alt="Image statique de Carapuce">
                         <img src="assets/img/squirtleHover.gif" class="col-12 animatedImage"
                             alt="Image dynamique de Bulbizarre">
@@ -182,13 +184,13 @@
             <div class="col-12 row mx-auto">
                 <div class="col-sm-5 col-6 mx-auto">
                     <div class="text-center">
-                        <img src="assets/img/bulbasaurBattle.gif" class="col-12 col-sm-9" id="userPokemonChoice"
+                        <img src="" class="col-12 col-sm-9" id="userPokemonChoice"
                             alt="Image du pokémon choisi par l'utilisateur">
                     </div>
                 </div>
                 <div class="col-sm-5 col-6 mx-auto">
                     <div class="text-center">
-                        <img src="assets/img/charmanderLose.gif" class="col-12 col-sm-9" id="rivalPokemonChoice"
+                        <img src="" class="col-12 col-sm-9" id="rivalPokemonChoice"
                             alt="Image du pokémon choisi par le rival">
                     </div>
                 </div>
@@ -202,7 +204,7 @@
             </div>
             <div class="col-sm-6 col-10 mx-auto">
                 <div class="text-center">
-                    <img src="assets/img/charmanderWin.gif" class="col-12 col-sm-7" id="resultBattle"
+                    <img src="" class="col-12 col-sm-7" id="resultBattle"
                         alt="image du résultat du combat">
                 </div>
             </div>
@@ -218,7 +220,7 @@
             </div>
             <div class="col-sm-6 col-10 mx-auto">
                 <div class="text-center">
-                    <img src="assets/img/win.gif" class="col-12 col-sm-7" id="finalResultBattle"
+                    <img src="" class="col-12 col-sm-7" id="finalResultBattle"
                         alt="image du résultat du combat">
                 </div>
             </div>

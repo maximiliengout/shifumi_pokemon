@@ -51,10 +51,10 @@ function pokemon(userChoice, userNumber) {
     setTimeout(function () {
         if (userCount == 3 || rivalCount == 3) {
             if (userCount == 3) {
-                resultText.innerText = 'Vous avez gagné !!!';
+                resultText.innerText = 'Tu as gagné !';
                 finalResultBattle.src = 'assets/img/win.gif';
             } else if (rivalCount == 3) {
-                resultText.innerText = 'Vous avez perdu !';
+                resultText.innerText = 'Tu as perdu !';
                 finalResultBattle.src = 'assets/img/lose.gif';
             }
             result.style.display = "none";
@@ -102,6 +102,9 @@ function restart(startScreenVar, pokemonChoiceVar, battleScreenVar, resultVar, f
     battleScreen.style.display = battleScreenVar;
     result.style.display = resultVar;
     final.style.display = finalVar;
+    userPokemonChoice.src ="";
+    rivalPokemonChoice.src = "";
+    resultBattle.src = "";
 }
 startBattle.onclick = () => {
     restart("none", "block", "block", "none", "none");
