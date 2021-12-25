@@ -1,0 +1,130 @@
+body {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Kaushan Script", cursive;
+}
+
+.back {
+    width: 100%;
+    height: 100vh;
+}
+
+@media screen AND (max-width: 900px) {
+    h1,
+    h2 {
+        font-size: 3rem;
+        margin-bottom: 50px;
+    }
+    .menuButton {
+        font-size: 1.3rem;
+    }
+    .score {
+        font-size: 0.9rem;
+    }
+}
+
+/*
+* Texte
+*/
+h1,
+h2,
+.vs {
+    color: #3565ae;
+    font-size: 4rem;
+    -webkit-text-stroke: 1px #ffcb05;
+    margin-bottom: 50px;
+}
+
+/*
+* Masquage des div
+*/
+#battleScreen,
+#pokemonChoice,
+#pokemonBattle,
+#result,
+#final,
+#winText,
+#drawText,
+#loseText {
+    display: none;
+}
+
+/* 
+* Changement de l'image statisque en image dynamique
+*/
+.staticImage {
+    position: relative;
+}
+.staticImage:hover .animatedImage {
+    opacity: 1;
+}
+.animatedImage {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+#pokeball:hover {
+    cursor: pointer;
+    transition: transform 1s ease;
+    transform: rotate(360deg);
+}
+
+/* 
+* CSS des joueurs
+*/
+.bg-color-user {
+    background-color: rgba(53, 101, 174, 0.8);
+}
+.bg-color-rival {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+.score {
+    font-size: 2rem;
+}
+.neutral {
+    color: white;
+}
+.winPoint {
+    color :green;
+}
+
+/* 
+* CSS de la modal Pikachu
+*/
+.charmander{
+    color: red;
+}
+.squirtle{
+    color: blue;
+}
+.bulbasaur{
+    color: green;
+}
+.goodGame {
+    font-weight: bold;
+}
+
+/* 
+* Boutons
+*/
+.menuButton {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+}
+.menuButton:hover {
+    transform: scale(1.1);
+    color: #fff;
+}
+.modalButton:hover {
+    transform: scale(1.1);
+}

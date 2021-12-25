@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Shifumi Pokémon</title>
+</head>
+
+<body>
+
+    <!---------------------------------------------Ecran d'accueil------------------------------>
+
+    <div id="startScreen" class="container back">
+        <div class="row ">
+            <h1 class="col-12 text-center mt-4">Shifumi Pokémon</h1>
+        </div>
+
+        <!-----------------------------------------Personnages + Pokéball------------------------------>
+        <div class="row align-items-center">
+            <div class="col-sm-4 col-6">
+                <div class="text-sm-start text-center staticImage">
+                    <img src="assets/img/ash.png" class="col-12 bg-color-user border border-primary border-5"
+                        alt="Image statique de l'utilisateur">
+                    <img src="assets/img/ash.gif"
+                        class="col-12 bg-color-user border border-primary h-100 border-5 animatedImage"
+                        alt="Image de l'utilisateur dynamique">
+                </div>
+            </div>
+            <div class="col-4 text-center d-sm-block d-none">
+                <img src="assets/img/pokeball.png" class="col-8" id="pokeball" alt="Image de la pokéball"
+                    data-bs-toggle="modal" data-bs-target="#pikachu">
+            </div>
+            <div class="col-sm-4 col-6 text-sm-end text-center staticImage">
+                <div>
+                    <img src="assets/img/gary.png" class="col-12 bg-color-rival border border-danger border-5"
+                        alt="Image statique du rival">
+                    <img src="assets/img/gary.gif"
+                        class="col-12 bg-color-user border border-danger h-100 border-5 animatedImage"
+                        alt="Image dynamique du rival">
+                </div>
+            </div>
+        </div>
+        <div class="row col-12 text-center mx-auto">
+            <div class="col-12 col-sm-4 text-sm-end mx-auto mt-sm-5 mt-2">
+                <button type="button" class="btn menuButton" data-bs-toggle="modal"
+                    data-bs-target="#pokemonShifumiRules">
+                    Règles
+                </button>
+            </div>
+            <div class="col-12 col-sm-4 text-sm-start mx-auto mt-sm-5 mt-2">
+                <button class="btn menuButton" id="startBattle">Commencer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour Pikachu -->
+    <div class="modal fade" id="pikachu" tabindex="-1" aria-labelledby="pikachu" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="assets/img/pikachu.gif" class="col-12" alt="Image de pikachu">
+                </div>
+                <p class="text-center">Sources</p>
+                <div class="row col-12 text-center">
+                    <span class="col-3"><a href="https://giphy.com/">Giphy</a></span>
+                    <span class="col-3"><a href="https://pixabay.com/">Pixabay</a></span>
+                    <span class="col-3"><a href="https://www.pokepedia.fr/">Poképédia</a></span>
+                    <span class="col-3"><a href="https://tenor.com/">Tenor</a></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning mx-auto modalButton"
+                        data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pour la règle du jeu -->
+    <div class="modal fade" id="pokemonShifumiRules" tabindex="-1" aria-labelledby="pokemonShifumiRules"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title mx-auto" id="pokemonShifumiRules">Règles Shifumi Pokémon</h3>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Le jeu se joue en 3 manches gagnantes</p>
+                    <p><span class="charmander">Salamèche</span> bat <span class="bulbasaur">Bulbizarre</span></p>
+                    <p><span class="bulbasaur">Bulbizarre</span> bat <span class="squirtle">Carapuce</span></p>
+                    <p><span class="squirtle">Carapuce</span> bat <span class="charmander">Salamèche</span></p>
+                    <p>Si les deux joueurs utilisent le même Pokémon, il y a match nul !</p>
+                    <p class="goodGame">Bon jeu !</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning mx-auto modalButton"
+                        data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------Ecran Bataille------------------------->
+    <div id="battleScreen" class="container-fluid back">
+        <div class="row align-items-center">
+            <div class="col-sm-4 col-6">
+                <div class="text-sm-start text-center row">
+                    <img src="assets/img/ash.png" class="col-5 bg-color-user border border-primary border-5"
+                        alt="Image du joueur">
+                    <div class="col-7 my-auto">
+                        <p class="col-md-12 col-12 score text-center text-white">Combats gagnés</p>
+                        <p class="score fs-3 fs-md-1 text-center">
+                            <i class="bi bi-circle-fill neutral" id="winUser1"></i>
+                            <i class="bi bi-circle-fill neutral" id="winUser2"></i>
+                            <i class="bi bi-circle-fill neutral" id="winUser3"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 text-center d-sm-block d-none">
+                <p class="text-center vs">VS</p>
+            </div>
+            <div class="col-sm-4 col-6 text-sm-end text-center staticImage">
+                <div class="text-sm-start text-center row">
+                    <div class="col-7 my-auto">
+                        <p class="col-md-12 col-12 score text-center text-white">Combats gagnés</p>
+                        <p class="score fs-3 fs-md-1 text-center">
+                            <i class="bi bi-circle-fill neutral" id="winRival1"></i>
+                            <i class="bi bi-circle-fill neutral" id="winRival2"></i>
+                            <i class="bi bi-circle-fill neutral" id="winRival3"></i>
+                        </p>
+                    </div>
+                    <img src="assets/img/gary.png" class="col-5 bg-color-rival border border-danger border-5"
+                        alt="Image du joueur">
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------------------Choix Pokémon-------------------------------------------------->
+        <div id="pokemonChoice">
+            <div class="text-center mt-5 mx-auto">
+                <h2 class="mb-3">Choisis ton Pokémon</h2>
+            </div>
+            <div class="col-12 row">
+                <div class="col-sm-3 col-5 mx-auto m-3">
+                    <div class="staticImage" id="bulbasaur">
+                        <img src="assets/img/bulbasaur.jpg" class="col-12 text-center"
+                            alt="Image statique de Bulbizarre">
+                        <img src="assets/img/bulbasaurHover.gif" class="col-12 animatedImage text-center"
+                            alt="Image dynamique de Bulbizarre">
+                    </div>
+                </div>
+                <div class="col-sm-3 col-5 mx-auto m-3">
+                    <div class="staticImage" id="charmander">
+                        <img src="assets/img/charmander.jpg" class="col-12" alt="Image statique de Salamèche">
+                        <img src="assets/img/charmanderHover.gif" class="col-12 animatedImage"
+                            alt="Image dynamique de Bulbizarre">
+                    </div>
+                </div>
+                <div class="col-sm-3 col-5 mx-auto m-3">
+                    <div class="staticImage" id="squirtle">
+                        <img src="assets/img/squirtle.jpg" class="col-12" alt="Image statique de Carapuce">
+                        <img src="assets/img/squirtleHover.gif" class="col-12 animatedImage"
+                            alt="Image dynamique de Bulbizarre">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---------------------------------------Combat------------------------------------------>
+        <div id="pokemonBattle">
+            <div class="text-center mt-5 mx-auto">
+                <h2 class="mb-3">Fight</h2>
+            </div>
+            <div class="col-12 row mx-auto">
+                <div class="col-sm-5 col-6 mx-auto">
+                    <div class="text-center">
+                        <img src="assets/img/bulbasaurBattle.gif" class="col-12 col-sm-9" id="userPokemonChoice"
+                            alt="Image du pokémon choisi par l'utilisateur">
+                    </div>
+                </div>
+                <div class="col-sm-5 col-6 mx-auto">
+                    <div class="text-center">
+                        <img src="assets/img/charmanderLose.gif" class="col-12 col-sm-9" id="rivalPokemonChoice"
+                            alt="Image du pokémon choisi par le rival">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-------------------------------------------Résultat--------------------------------->
+        <div id="result">
+            <div class="text-center mt-3 mx-auto">
+                <h2 id="titleText" class="mb-3"></h2>
+            </div>
+            <div class="col-sm-6 col-10 mx-auto">
+                <div class="text-center">
+                    <img src="assets/img/charmanderWin.gif" class="col-12 col-sm-7" id="resultBattle"
+                        alt="image du résultat du combat">
+                </div>
+            </div>
+            <div class="row col-10 col-sm-4 mx-auto my-3">
+                <button class="btn menuButton text-center" id="restartBattle">Rejouer</button>
+            </div>
+        </div>
+
+        <!---------------- Résultat final -------------------------------------->
+        <div id="final">
+            <div class="text-center mt-3 mx-auto">
+                <h2 class="mb-3" id="resultText"></h2>
+            </div>
+            <div class="col-sm-6 col-10 mx-auto">
+                <div class="text-center">
+                    <img src="assets/img/win.gif" class="col-12 col-sm-7" id="finalResultBattle"
+                        alt="image du résultat du combat">
+                </div>
+            </div>
+            <div class="row col-10 col-sm-3 mx-auto my-3">
+                <button class="btn menuButton text-center" id="restartGame">Rejouer</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Les scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
